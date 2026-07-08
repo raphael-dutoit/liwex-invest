@@ -3,8 +3,8 @@
 const HEADER_HTML = `
 <div class="max-w-7xl mx-auto px-6 lg:px-10">
   <div class="flex items-center justify-between h-20 lg:h-24">
-    <a href="/" class="logo-link flex items-center h-6 lg:h-7">
-      <img src="/assets/img/logo.svg" alt="LIWEX INVEST" class="logo-img h-full w-auto" />
+    <a href="/" class="logo-link flex items-center h-9 lg:h-11">
+      <img src="/assets/img/logo-tagline.svg" alt="LIWEX INVEST" class="logo-img h-full w-auto" />
     </a>
 
     <nav class="hidden lg:flex items-center gap-10" aria-label="Navigation principale">
@@ -61,7 +61,7 @@ const FOOTER_HTML = `
 <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
     <div class="md:col-span-1">
-      <img src="/assets/img/logo-tagline.svg" alt="LIWEX INVEST" class="footer-logo-img h-10 w-auto mb-5" />
+      <img src="/assets/img/logo.svg" alt="LIWEX INVEST" class="footer-logo-img h-6 w-auto mb-5" />
       <p class="text-sm text-white/50 leading-relaxed">Un groupe immobilier intégré, de l'investissement à la création de valeur.</p>
     </div>
     <div>

@@ -1,0 +1,201 @@
+/* LIWEX INVEST — feuille de style complémentaire à Tailwind (Play CDN) */
+
+:root {
+  --color-bronze: #a9784c;
+  --color-bronze-dark: #8b6239;
+  --color-anthracite: #23262b;
+  --color-pierre: #a8a6a0;
+  --color-pierre-light: #f4f3f1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--color-anthracite);
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: "Fraunces", "Georgia", serif;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Header ---------- */
+#site-header {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+#site-header.header-solid {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(35, 38, 43, 0.08);
+}
+
+/* Logo (fourni en noir) : blanc sur hero sombre, noir une fois le header solide */
+.logo-img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+#site-header.header-solid .logo-img,
+body[data-header-mode="solid"] #site-header .logo-img {
+  filter: none;
+}
+
+/* Logo du footer : toujours blanc (fond anthracite) */
+.footer-logo-img {
+  filter: brightness(0) invert(1);
+}
+
+#site-header .nav-link {
+  color: #ffffff;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+#site-header.header-solid .nav-link,
+#site-header.header-solid .logo-text {
+  color: var(--color-anthracite);
+}
+
+#site-header .logo-text {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+/* When header is NOT solid (over the hero) and has no dark hero (interior pages), force solid on load via body[data-header="solid"] */
+body[data-header-mode="solid"] #site-header {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(35, 38, 43, 0.08);
+}
+body[data-header-mode="solid"] #site-header .nav-link,
+body[data-header-mode="solid"] #site-header .logo-text {
+  color: var(--color-anthracite);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background-color: var(--color-bronze);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown-panel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+.dropdown:hover .dropdown-panel,
+.dropdown.dropdown-open .dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile menu */
+#mobile-menu {
+  transform: translateY(-8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+}
+#mobile-menu.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ---------- Fade-in on scroll ---------- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-up.delay-1 { transition-delay: 0.1s; }
+.fade-in-up.delay-2 { transition-delay: 0.2s; }
+.fade-in-up.delay-3 { transition-delay: 0.3s; }
+.fade-in-up.delay-4 { transition-delay: 0.4s; }
+
+/* ---------- Hero parallax (léger) ---------- */
+.hero-media {
+  will-change: transform;
+}
+
+/* ---------- Placeholder visuel (en attendant les photos définitives) ---------- */
+.img-placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2b2e33 0%, #4a4d52 55%, #6b5a45 100%);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+}
+.img-placeholder span {
+  padding: 0 1.5rem;
+}
+.img-placeholder.light {
+  background: linear-gradient(135deg, #eceae6 0%, #dedad3 55%, #cabfa9 100%);
+  color: rgba(35, 38, 43, 0.55);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -20px rgba(35, 38, 43, 0.25);
+}
+
+/* Focus visible accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 3px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  color: var(--color-anthracite);
+  padding: 0.75rem 1.25rem;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}

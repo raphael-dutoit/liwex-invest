@@ -16,7 +16,7 @@ const HEADER_HTML = `
           Le Groupe
           <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl border border-stone-100 py-3">
+        <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl border border-stone-100 py-3 rounded-2xl overflow-hidden">
           <a href="/le-groupe/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Group</a>
           <a href="/le-groupe/liwex-invest/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">LIWEx Invest</a>
           <a href="/le-groupe/corner-immo/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Immo</a>

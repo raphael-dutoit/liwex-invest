@@ -17,7 +17,7 @@ const HEADER_HTML = `
           <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl border border-stone-100 py-3">
-          <a href="/le-groupe/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Vue d'ensemble</a>
+          <a href="/le-groupe/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Group</a>
           <a href="/le-groupe/liwex-invest/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">LIWEx Invest</a>
           <a href="/le-groupe/corner-immo/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Immo</a>
           <a href="/le-groupe/corner-habitat/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Habitat</a>
@@ -45,7 +45,7 @@ const HEADER_HTML = `
     <div>
       <p class="font-display text-3xl text-anthracite mb-3">Le Groupe</p>
       <div class="flex flex-col gap-3 pl-4 border-l border-stone-200">
-        <a href="/le-groupe/" class="text-base text-stone-600">Vue d'ensemble</a>
+        <a href="/le-groupe/" class="text-base text-stone-600">Corner Group</a>
         <a href="/le-groupe/liwex-invest/" class="text-base text-stone-600">LIWEx Invest</a>
         <a href="/le-groupe/corner-immo/" class="text-base text-stone-600">Corner Immo</a>
         <a href="/le-groupe/corner-habitat/" class="text-base text-stone-600">Corner Habitat</a>

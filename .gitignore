@@ -4,3 +4,5 @@ node_modules/
 dist/
 
 .fuse_hidden*
+
+assets/fonts/*.otf

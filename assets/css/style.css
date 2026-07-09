@@ -8,6 +8,16 @@
   --color-pierre-light: #f4f3f1;
 }
 
+/* ---------- Police des titres : Galano Grotesque (self-hosted, ExtraBold) ---------- */
+@font-face {
+  font-family: "GalanoGrotesque";
+  src: url("/assets/fonts/GalanoGrotesque-ExtraBold.woff2") format("woff2"),
+       url("/assets/fonts/GalanoGrotesque-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,7 +30,8 @@ body {
 
 h1, h2, h3, h4,
 .font-display {
-  font-family: "Fraunces", "Georgia", serif;
+  font-family: "GalanoGrotesque", "Inter", sans-serif;
+  font-weight: 800;
   letter-spacing: -0.01em;
 }
 
@@ -37,20 +48,23 @@ h1, h2, h3, h4,
   border-bottom: 1px solid rgba(35, 38, 43, 0.08);
 }
 
-/* Logo (fourni en noir) : blanc sur hero sombre, noir une fois le header solide */
+/* Logo : version claire sur hero sombre, version foncée une fois le header blanc */
 .logo-img {
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
+  transition: opacity 0.3s ease;
 }
-#site-header.header-solid .logo-img,
-body[data-header-mode="solid"] #site-header .logo-img {
-  filter: none;
+.logo-dark {
+  display: none;
+}
+#site-header.header-solid .logo-light,
+body[data-header-mode="solid"] #site-header .logo-light {
+  display: none;
+}
+#site-header.header-solid .logo-dark,
+body[data-header-mode="solid"] #site-header .logo-dark {
+  display: block;
 }
 
-/* Logo du footer : toujours blanc (fond anthracite) */
-.footer-logo-img {
-  filter: brightness(0) invert(1);
-}
+/* Logo du footer : version claire (fond anthracite) */
 
 #site-header .nav-link {
   color: #ffffff;

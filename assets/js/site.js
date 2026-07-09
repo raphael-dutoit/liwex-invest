@@ -4,7 +4,8 @@ const HEADER_HTML = `
 <div class="max-w-7xl mx-auto px-6 lg:px-10">
   <div class="flex items-center justify-between h-20 lg:h-24">
     <a href="/" class="logo-link flex items-center h-9 lg:h-11">
-      <img src="/assets/img/logo-tagline.svg" alt="LIWEx Invest" class="logo-img h-full w-auto" />
+      <img src="/assets/img/Cornergroup-light.svg" alt="Corner Group" class="logo-img logo-light h-full w-auto" />
+      <img src="/assets/img/Cornergroup-dark.svg" alt="Corner Group" class="logo-img logo-dark h-full w-auto" />
     </a>
 
     <nav class="hidden lg:flex items-center gap-10" aria-label="Navigation principale">
@@ -59,7 +60,7 @@ const FOOTER_HTML = `
 <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
     <div class="md:col-span-1">
-      <img src="/assets/img/logo.svg" alt="LIWEx Invest" class="footer-logo-img h-6 w-auto mb-5" />
+      <img src="/assets/img/Cornergroup-light.svg" alt="Corner Group" class="footer-logo-img h-6 w-auto mb-5" />
       <p class="text-sm text-white/50 leading-relaxed">Un groupe immobilier intégré, de l'investissement à la création de valeur.</p>
     </div>
     <div>

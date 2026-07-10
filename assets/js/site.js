@@ -18,7 +18,6 @@ const HEADER_HTML = `
         </button>
         <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl border border-stone-100 py-3 rounded-2xl overflow-hidden">
           <a href="/le-groupe/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Group</a>
-          <a href="/le-groupe/liwex-invest/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Group</a>
           <a href="/le-groupe/corner-immo/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Immo</a>
           <a href="/le-groupe/corner-habitat/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Habitat</a>
         </div>
@@ -48,7 +47,6 @@ const MOBILE_MENU_HTML = `
       <p class="font-display text-3xl text-anthracite mb-3">Le Groupe</p>
       <div class="flex flex-col gap-3 pl-4 border-l border-stone-200">
         <a href="/le-groupe/" class="text-base text-stone-600">Corner Group</a>
-        <a href="/le-groupe/liwex-invest/" class="text-base text-stone-600">Corner Group</a>
         <a href="/le-groupe/corner-immo/" class="text-base text-stone-600">Corner Immo</a>
         <a href="/le-groupe/corner-habitat/" class="text-base text-stone-600">Corner Habitat</a>
       </div>
@@ -77,13 +75,13 @@ const FOOTER_HTML = `
     <div>
       <p class="text-xs tracking-[0.15em] uppercase text-white/40 mb-5">Les sociétés</p>
       <ul class="space-y-3 text-sm text-white/70">
-        <li><a href="/le-groupe/liwex-invest/" class="hover:text-bronze transition-colors">Corner Group</a></li>
+        <li><a href="/le-groupe/" class="hover:text-bronze transition-colors">Corner Group</a></li>
         <li><a href="/le-groupe/corner-immo/" class="hover:text-bronze transition-colors">Corner Immo</a></li>
         <li><a href="/le-groupe/corner-habitat/" class="hover:text-bronze transition-colors">Corner Habitat</a></li>
       </ul>
       <p class="text-xs tracking-[0.15em] uppercase text-white/40 mb-5 mt-8">Sites du groupe</p>
       <ul class="space-y-3 text-sm text-white/70">
-        <li><a href="https://www.liwexinvest.fr" target="_blank" rel="noopener" class="hover:text-bronze transition-colors">liwexinvest.fr <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cornergroup.com" target="_blank" rel="noopener" class="hover:text-bronze transition-colors">cornergroup.com <span aria-hidden="true">↗</span></a></li>
         <li><a href="https://cornerimmo.fr" target="_blank" rel="noopener" class="hover:text-bronze transition-colors">cornerimmo.fr <span aria-hidden="true">↗</span></a></li>
         <li><a href="https://cornerhabitat.fr" target="_blank" rel="noopener" class="hover:text-bronze transition-colors">cornerhabitat.fr <span aria-hidden="true">↗</span></a></li>
       </ul>

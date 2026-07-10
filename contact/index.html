@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact | Corner Group</title>
 <meta name="description" content="Contactez Corner Group pour échanger sur votre projet immobilier : investissement, transaction, rénovation, construction ou marchand de biens." />
-<link rel="canonical" href="https://www.liwexinvest.fr/contact/" />
+<link rel="canonical" href="https://cornergroup.com/contact/" />
 <meta property="og:title" content="Contact | Corner Group" />
 <meta property="og:description" content="Parlons de votre projet immobilier." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.liwexinvest.fr/contact/" />
+<meta property="og:url" content="https://cornergroup.com/contact/" />
 <meta property="og:image" content="/assets/img/og-cover.jpg" />
 <meta name="robots" content="index, follow" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -113,12 +113,24 @@
 <footer id="site-footer" class="bg-anthracite text-white"></footer>
 <script src="/assets/js/site.js"></script>
 <script>
-  // Comportement de secours simple tant que le formulaire n'est pas relié à un service d'envoi.
+  // Envoi via le client mail du visiteur (site statique) — objet « Contact Corner Group ».
   document.getElementById('contact-form')?.addEventListener('submit', function (e) {
-    if (this.action.endsWith('#')) {
-      e.preventDefault();
-      const status = document.getElementById('form-status');
-      status.textContent = "Ce formulaire n'est pas encore connecté à un service d'envoi. Merci de nous écrire directement à wilfried@cornerimmo.fr en attendant.";
+    e.preventDefault();
+    // Honeypot anti-spam : si rempli, on ignore silencieusement.
+    if (this.querySelector('[name="company_website"]')?.value) return;
+    const val = (id) => (document.getElementById(id)?.value || '').trim();
+    const corps =
+      'Nom : ' + val('nom') + '\n' +
+      'Entreprise : ' + val('entreprise') + '\n' +
+      'Email : ' + val('email') + '\n\n' +
+      val('message');
+    const lien = 'mailto:wilfried@cornerimmo.fr'
+      + '?subject=' + encodeURIComponent('Contact Corner Group')
+      + '&body=' + encodeURIComponent(corps);
+    window.location.href = lien;
+    const status = document.getElementById('form-status');
+    if (status) {
+      status.textContent = "Votre logiciel de messagerie va s'ouvrir avec votre message pré-rempli. Si rien ne se passe, écrivez-nous directement à wilfried@cornerimmo.fr.";
       status.classList.remove('hidden');
     }
   });

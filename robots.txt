@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.liwexinvest.fr/sitemap.xml
+Sitemap: https://cornergroup.com/sitemap.xml

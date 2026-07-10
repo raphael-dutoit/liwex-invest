@@ -1,4 +1,4 @@
-/* LIWEx Invest — header/footer partagés + comportements (scroll, menu, animations) */
+/* Corner Group — header/footer partagés + comportements (scroll, menu, animations) */
 
 const HEADER_HTML = `
 <div class="max-w-7xl mx-auto px-6 lg:px-10">
@@ -18,7 +18,7 @@ const HEADER_HTML = `
         </button>
         <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white shadow-2xl border border-stone-100 py-3 rounded-2xl overflow-hidden">
           <a href="/le-groupe/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Group</a>
-          <a href="/le-groupe/liwex-invest/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">LIWEx Invest</a>
+          <a href="/le-groupe/liwex-invest/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Group</a>
           <a href="/le-groupe/corner-immo/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Immo</a>
           <a href="/le-groupe/corner-habitat/" class="block px-6 py-2.5 text-sm text-anthracite hover:text-bronze hover:bg-stone-50 transition-colors">Corner Habitat</a>
         </div>
@@ -32,10 +32,12 @@ const HEADER_HTML = `
     </button>
   </div>
 </div>
+`;
 
-<div id="mobile-menu" class="lg:hidden fixed inset-0 top-0 bg-white z-40 flex flex-col">
+const MOBILE_MENU_HTML = `
+<div id="mobile-menu" class="lg:hidden fixed inset-0 top-0 bg-white z-[60] flex flex-col">
   <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between h-20">
-    <span class="font-display text-xl text-anthracite">LIWEx <span class="font-normal">Invest</span></span>
+    <span class="font-display text-xl text-anthracite">Corner <span class="font-normal">Group</span></span>
     <button id="mobile-menu-close" class="p-2 -mr-2 text-anthracite" aria-label="Fermer le menu">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L21 21" stroke="currentColor" stroke-width="1.6"/><path d="M21 1L1 21" stroke="currentColor" stroke-width="1.6"/></svg>
     </button>
@@ -46,7 +48,7 @@ const HEADER_HTML = `
       <p class="font-display text-3xl text-anthracite mb-3">Le Groupe</p>
       <div class="flex flex-col gap-3 pl-4 border-l border-stone-200">
         <a href="/le-groupe/" class="text-base text-stone-600">Corner Group</a>
-        <a href="/le-groupe/liwex-invest/" class="text-base text-stone-600">LIWEx Invest</a>
+        <a href="/le-groupe/liwex-invest/" class="text-base text-stone-600">Corner Group</a>
         <a href="/le-groupe/corner-immo/" class="text-base text-stone-600">Corner Immo</a>
         <a href="/le-groupe/corner-habitat/" class="text-base text-stone-600">Corner Habitat</a>
       </div>
@@ -75,7 +77,7 @@ const FOOTER_HTML = `
     <div>
       <p class="text-xs tracking-[0.15em] uppercase text-white/40 mb-5">Les sociétés</p>
       <ul class="space-y-3 text-sm text-white/70">
-        <li><a href="/le-groupe/liwex-invest/" class="hover:text-bronze transition-colors">LIWEx Invest</a></li>
+        <li><a href="/le-groupe/liwex-invest/" class="hover:text-bronze transition-colors">Corner Group</a></li>
         <li><a href="/le-groupe/corner-immo/" class="hover:text-bronze transition-colors">Corner Immo</a></li>
         <li><a href="/le-groupe/corner-habitat/" class="hover:text-bronze transition-colors">Corner Habitat</a></li>
       </ul>
@@ -94,7 +96,7 @@ const FOOTER_HTML = `
 
   <div class="pt-10 flex flex-col lg:flex-row lg:items-start justify-between gap-8">
     <p class="text-xs text-white/40 leading-relaxed max-w-2xl">
-      LIWEx Invest — SASU au capital de 1&nbsp;000&nbsp;€ — SIREN&nbsp;891&nbsp;315&nbsp;624 — SIRET&nbsp;891&nbsp;315&nbsp;624&nbsp;00017 — RCS Chambéry 891&nbsp;315&nbsp;624 — TVA intracommunautaire FR70&nbsp;891315624<br class="hidden lg:block" />
+      LIWEX INVEST — SASU au capital de 1&nbsp;000&nbsp;€ — SIREN&nbsp;891&nbsp;315&nbsp;624 — SIRET&nbsp;891&nbsp;315&nbsp;624&nbsp;00017 — RCS Chambéry 891&nbsp;315&nbsp;624 — TVA intracommunautaire FR70&nbsp;891315624<br class="hidden lg:block" />
       Siège social&nbsp;: 1357 Route de Bellecombette, 73000 Jacob-Bellecombette — Président&nbsp;: Wilfried Exertier
     </p>
     <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/50">
@@ -103,14 +105,17 @@ const FOOTER_HTML = `
       <a href="/cookies/" class="hover:text-bronze transition-colors">Cookies</a>
     </div>
   </div>
-  <p class="text-xs text-white/30 mt-8">© ${new Date().getFullYear()} LIWEx Invest. Tous droits réservés.</p>
+  <p class="text-xs text-white/30 mt-8">© ${new Date().getFullYear()} Corner Group. Tous droits réservés.</p>
 </div>
 `;
 
 document.addEventListener("DOMContentLoaded", () => {
   const headerMount = document.getElementById("site-header");
   const footerMount = document.getElementById("site-footer");
-  if (headerMount) headerMount.innerHTML = HEADER_HTML;
+  if (headerMount) {
+    headerMount.innerHTML = HEADER_HTML;
+    document.body.insertAdjacentHTML("beforeend", MOBILE_MENU_HTML);
+  }
   if (footerMount) footerMount.innerHTML = FOOTER_HTML;
 
   // Header solid on scroll
